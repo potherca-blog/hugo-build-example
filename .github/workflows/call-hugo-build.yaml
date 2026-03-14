@@ -7,6 +7,9 @@ on:
 jobs:
   build:
     uses: potherca/hugo-build/.github/workflows/hugo-build.yaml@main
+    with:
+      # (Optional) Path to build the Hugo site from, defaults to ./
+      path: ./
 
   deploy:
     environment:
