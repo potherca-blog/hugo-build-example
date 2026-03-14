@@ -14,12 +14,23 @@ jobs:
     needs: checkout
     uses: potherca/hugo-build/.github/workflows/hugo-build.yaml@main
 
+  upload:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/upload-artifact@v7
+        with:
+          # (Optional) Name of the artifact to upload. Default is 'artifact'
+          name: github-pages
+          # Path or wildcard pattern of what to upload
+          path: public
+
   deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     name: Deploy to GitHub Pages
-    needs: build
+    needs: upload
     # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
     permissions:
       pages: write      # to deploy to Pages
