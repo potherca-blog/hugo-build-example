@@ -8,7 +8,9 @@ jobs:
   build:
     uses: potherca/hugo-build/.github/workflows/hugo-build.yaml@main
     with:
-        # (Optional) Docker image to use for building the Hugo site
+      config-module-imports: |
+        { "path": "github.com/McShelby/hugo-theme-relearn" }
+      # (Optional) Docker image to use for building the Hugo site
       docker-image: ghcr.io/hugomods/hugo:std-go-git
       # (Optional) Path to build the Hugo site from, defaults to ./
       path: ./
