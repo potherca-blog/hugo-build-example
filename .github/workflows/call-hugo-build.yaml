@@ -11,7 +11,11 @@ jobs:
       # Import Hugo module of the "Relearn" theme
       config-module-imports: |
         { "path": "github.com/McShelby/hugo-theme-relearn" }
-      # Theme specific configuration
+      # Module mount configuration, For a full list of options see: https://gohugo.io/configuration/module/#mounts
+      config-module-mounts: |
+        { "source": "README.md", "target": "content/_index.md" }
+      # Theme specific configuration. For a full list of options see:
+      # https://mcshelby.github.io/hugo-theme-relearn/configuration/reference/
       config-params: |
         {
           "alwaysopen": false,
