@@ -21,6 +21,10 @@ jobs:
           "disableLandingPageButton": true,
           "themeVariant": ["auto", "zen-dark", "zen-light"]
         }
+      # Custom CSS
+      css: |
+        /* Remove the "Built with Hugo" link */
+        aside p:has(a[title="love"]) { display: none; }
       # Docker image to use for building the Hugo site (loaded from GitHub Container Registry, instead of Docker Hub)
       docker-image: ghcr.io/hugomods/hugo:std-go-git
       # Path to build the Hugo site from, defaults to ./
