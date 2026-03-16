@@ -29,6 +29,7 @@ jobs:
       config-root-keys: |
           "disableHugoGeneratorInject": true,
           "languageCode": "en-us",
+          "markup": { "goldmark": { "renderer": { "unsafe": true } } },
           "title": "Hugo Build Example"
   deploy:
     environment:
