@@ -13,7 +13,7 @@ jobs:
         { "path": "github.com/McShelby/hugo-theme-relearn" }
       # Module mount configuration, For a full list of options see: https://gohugo.io/configuration/module/#mounts
       config-module-mounts: |
-        { "source": "README.md", "target": "content/_index.md" }
+        { "source": ".github/workflows/call-hugo-build.yaml", "target": "content/call-hugo-build.yaml" }
       # Theme specific configuration. For a full list of options see:
       # https://mcshelby.github.io/hugo-theme-relearn/configuration/reference/
       config-params: |
