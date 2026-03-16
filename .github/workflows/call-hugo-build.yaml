@@ -12,7 +12,7 @@ jobs:
     uses: potherca/hugo-build/.github/workflows/hugo-build.yaml@main
     with:
       # See more build details
-      build-log-level: info
+      build-log-level: debug
       # Use README.md files as folder index
       build-readme-as-index: true
       # Import Hugo module of the "Relearn" theme
