@@ -24,14 +24,12 @@ jobs:
       # Theme specific configuration. For a full list of options see:
       # https://mcshelby.github.io/hugo-theme-relearn/configuration/reference/
       config-params: |
-        {
-          "alwaysopen": false,
-          "collapsibleMenu": true,
-          "disableGeneratorVersion": true,
-          "disableInlineCopyToClipBoard": true,
-          "disableLandingPageButton": true,
-          "themeVariant": ["auto", "zen-dark", "zen-light"]
-        }
+        "alwaysopen": false,
+        "collapsibleMenu": true,
+        "disableGeneratorVersion": true,
+        "disableInlineCopyToClipBoard": true,
+        "disableLandingPageButton": true,
+        "themeVariant": [ "auto", "zen-dark", "zen-light" ]
       # Custom CSS
       css: |
         /* Avoid Duplicate titles */
@@ -40,16 +38,17 @@ jobs:
         aside p:has(a[title="love"]) {
             display: none;
         }
+      # Configuration in the root of the Hugo config. For a full list of options see: https://gohugo.io/configuration/all/
+      config-root-keys: |
+        "disableHugoGeneratorInject": true,
+        "languageCode": "en-us",
+        "markup": { "goldmark": { "renderer": { "unsafe": true } } },
+        "title": "Hugo Build Example"
       # Docker image to use for building the Hugo site (loaded from GitHub Container Registry, instead of Docker Hub)
       docker-image: ghcr.io/hugomods/hugo:std-go-git
       # Path to build the Hugo site from, defaults to ./
       path: ./
-      # Configuration in the root of the Hugo config. For a full list of options see: https://gohugo.io/configuration/all/
-      config-root-keys: |
-          "disableHugoGeneratorInject": true,
-          "languageCode": "en-us",
-          "markup": { "goldmark": { "renderer": { "unsafe": true } } },
-          "title": "Hugo Build Example"
+
   deploy:
     environment:
       name: github-pages
